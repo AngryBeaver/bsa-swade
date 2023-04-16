@@ -10,12 +10,22 @@ export class Swade implements SystemApi {
 
     async actorRollSkill(actor, skillId){
         const skills = actor.items.filter(i=>i.type === "skill" && i.name.toLowerCase() === skillId.toLowerCase())
-        const skill = skills[0];
-        return await actor.rollSkill(skill);
+        const skill = skills[0].id;
+        const result = await actor.rollSkill(skill);
+        if(result === null){
+            //todo fix me allow null values for aborted rolls
+            throw Error("roll aborted");
+        }
+        return result;
     }
 
     async actorRollAbility(actor, abilityId){
-        return await actor.rollAttribute(abilityId);
+        const result =  await actor.rollAttribute(abilityId);
+        if(result === null){
+            //todo fix me allow null values for aborted rolls
+            throw Error("roll aborted");
+        }
+        return result;
     }
 
     actorCurrenciesGet(actor):Currencies {
