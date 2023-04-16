@@ -5,3 +5,8 @@
 
 link to module
 https://github.com/AngryBeaver/bsa-swade/releases/latest/download/module.json
+
+[system-interface](https://github.com/AngryBeaver/beavers-system-interface)
+[example module](https://github.com/AngryBeaver/beavers-crafting)
+
+
