@@ -1,9 +1,10 @@
 {
 	"name": "bsa-swade",
 	"title": "Beaver's System Adaption swade",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "Beaver's System Adaption swade",
-	"devDir": "C:\\Users\\Riess\\AppData\\Local\\FoundryVTT\\Data\\modules",
+	"#devDir": "c:\\vtts\\v12.317\\Data\\modules",
+	"devDir": "c:\\vtts\\v11.315\\Data\\modules",
 	"main": "src/main.js",
 	"files": [
 		"src/types.ts"

@@ -1,3 +1,5 @@
+import { Settings } from "./Settings.js";
+
 export class Swade implements SystemApi {
 
     get version() {
@@ -48,12 +50,16 @@ export class Swade implements SystemApi {
     }
 
     get configSkills():SkillConfig[] {
-        return game['packs'].get(game['settings'].get('swade', 'coreSkillsCompendium')).index.map(skill=>{
+        const skills = game['packs'].get(game['settings'].get('swade', 'coreSkillsCompendium')).index.map(skill=>{
             return {
                 id: skill.name,
                 label: skill.name
             }
         });
+        Settings.get(Settings.SKILLS).split(",").forEach(skill=>{
+            skills.push({id:skill.trim(),label:skill.trim()})
+        });
+        return skills;
     }
 
     get configAbilities():AbilityConfig[] {
