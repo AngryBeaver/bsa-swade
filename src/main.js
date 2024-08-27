@@ -5,3 +5,7 @@ Hooks.on("beavers-system-interface.init", async function(){
     beaversSystemInterface.register(new Swade());
     Settings.init();
 });
+
+Hooks.on("beavers-system-interface.ready", async function(){
+    import("./SkillTest.js")
+});

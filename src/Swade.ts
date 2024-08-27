@@ -11,7 +11,13 @@ export class Swade implements SystemApi {
     }
 
     async actorRollSkill(actor, skillId){
-        const skills = actor.items.filter(i=>i.type === "skill" && i.name.toLowerCase() === skillId.toLowerCase())
+        let skills = actor.items.filter(i=>i.type === "skill" && i.name.toLowerCase() === skillId.toLowerCase())
+        if(skills.length === 0 ){
+            skills = actor.items.filter(i=>i.type === "skill" && i.name.toLowerCase() === "unskilled attempt")
+        }
+        if(skills.length === 0 ) {
+            throw Error(`Skill ${skillId} not found on actor`);
+        }
         const skill = skills[0].id;
         const result = await actor.rollSkill(skill);
         return result;
