@@ -1,7 +1,7 @@
 {
 	"name": "bsa-swade",
 	"title": "Beaver's System Adaption swade",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Beaver's System Adaption swade",
 	"devDir": "c:\\vtts\\v12.323\\Data\\modules",
 	"#devDir": "c:\\vtts\\v11.315\\Data\\modules",

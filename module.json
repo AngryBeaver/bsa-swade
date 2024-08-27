@@ -2,7 +2,7 @@
     "title": "Beaver's System Adaption swade",
     "description": "swade implementation for Beaver's System Interface",
     "id": "bsa-swade",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "authors": [
       {
         "name": "angryBeaver",

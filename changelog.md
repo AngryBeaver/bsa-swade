@@ -1,3 +1,7 @@
+# 1.2.1
+- add AbilityTest for modular Tests
+  - default dc is now 4
+  - a single roll may return multiple successes for each multiple of the dc
 # 1.2.0
 - Add SkillTest for modular Tests
   - default dc is now 4
