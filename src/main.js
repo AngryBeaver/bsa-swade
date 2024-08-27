@@ -8,4 +8,5 @@ Hooks.on("beavers-system-interface.init", async function(){
 
 Hooks.on("beavers-system-interface.ready", async function(){
     import("./SkillTest.js")
+    import("./AbilityTest.js")
 });
