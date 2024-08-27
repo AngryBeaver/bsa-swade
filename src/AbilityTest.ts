@@ -60,7 +60,7 @@ class AbilityTestCustomized implements Test<"ability"|"dc"> {
         const success = Math.floor(roll.total/dc);
         return {
             success:success,
-            fail: (roll<(this.data.dc||0))?1:0
+            fail: success>0?0:1
         }
     }
 

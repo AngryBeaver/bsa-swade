@@ -57,7 +57,7 @@ class SkillTestCustomized implements Test<"skill"|"dc"> {
         const success = Math.floor(roll.total/dc);
         return {
             success:success,
-            fail: roll.total<this.data.dc?1:0
+            fail: success>0?0:1
         }
     }
 
