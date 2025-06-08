@@ -1,3 +1,5 @@
+# 1.3.0
+- add color scheme
 # 1.2.1
 - add AbilityTest for modular Tests
   - default dc is now 4
