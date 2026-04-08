@@ -1,3 +1,5 @@
+# 1.3.1
+- fix bug with actor sheet tabs e.g. support latest swade version
 # 1.3.0
 - add color scheme
 # 1.2.1

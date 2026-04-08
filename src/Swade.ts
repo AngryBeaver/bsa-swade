@@ -35,14 +35,17 @@ export class Swade implements SystemApi {
     async actorCurrenciesStore(actor, currencies: Currencies): Promise<void> {
         await actor.update({system: {details: { currency: currencies["main"]}}});
     }
+    get actorSheetTabSelector():string{
+        return 'nav [data-group="primary"][data-tab]';
+    }
 
     actorSheetAddTab(sheet, html, actor, tabData:{ id: string, label: string, html: string }, tabBody:string):void {
-        const tabs = $(html).find('nav[data-group="primary"]');
-        const tabItem = $('<a class="item" data-tab="' + tabData.id + '" title="' + tabData.label + '">'+tabData.label+'</a>');
+        const tabs = $(html).find(this.actorSheetTabSelector).parent();
+        const tabItem = $('<a data-action="tab" data-group="primary" class="item" data-tab="' + tabData.id + '" title="' + tabData.label + '"><span>'+tabData.label+'</span></a>');
         tabs.append(tabItem);
-        const body = $(html).find(".sheet-body");
-        const tabContent = $('<section class="tab" data-group="primary" data-tab="' + tabData.id + '"></section>');
-        body.append(tabContent);
+        const tabContent = $('<section class="gridcell sheet-body tab scrollable edges" data-group="primary" data-tab="' + tabData.id + '"></section>');
+        tabs.find("section[data-tab='"+tabData.id+"']").remove();
+        tabs.after(tabContent);
         tabContent.append(tabBody);
     }
 
